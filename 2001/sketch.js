@@ -3,9 +3,7 @@ let modeX = 100;
 let modeX_speed = 0.5;
 
 function setup() {
-
-  /* stalker */
-//  video = createVideo("Stalker_Dream.mp4");
+  /* 2001 - Stargate */
   video = createVideo("2001.mp4");
   video.loop();
   video.size(420, 300);
@@ -13,8 +11,6 @@ function setup() {
 
   createCanvas(video.width, video.height);
   noStroke();
-  noCursor();
-
 }
 
 function draw() {
@@ -41,7 +37,6 @@ function draw() {
       colorMode(HSB, modeX);
       fill(r, g, b);
       rect(col, row, 15, 15);
-
     }
   }
 }

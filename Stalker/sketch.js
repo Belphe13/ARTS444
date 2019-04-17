@@ -7,13 +7,11 @@ function setup() {
   /* stalker */
   video = createVideo("Stalker_Dream.mp4");
   video.loop();
-  video.size(420, 300);
+  video.size(420, 270);
 //  video.hide();
 
   createCanvas(video.width, video.height);
   noStroke();
-  noCursor();
-
 }
 
 function draw() {
@@ -28,8 +26,8 @@ function draw() {
   }
 
   // loop tho pixels
-  for (let row = 0; row < video.height; row += 15) {
-    for (let col = 0; col < video.width; col += 15) {
+  for (let row = 0; row < video.height; row += 1) {
+    for (let col = 0; col < video.width; col += 1) {
 
       // get rgb values for each pixel
       let i = (col + row * video.width) * 4;
@@ -89,8 +87,7 @@ function draw() {
       colorMode(HSB, 255);
 
       fill(h, s, l);
-      rect(col, row, 15, 15);
-
+      rect(col, row, 1, 1);
     }
   }
 }
