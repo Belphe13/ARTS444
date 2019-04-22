@@ -1,14 +1,13 @@
 let video;
-let modeX = 100;
-let modeX_speed = 0.5;
 
 function setup() {
 
-  /* vertigo */
+  /* stalker */
   video = createVideo("Stalker_Enter_Zone.mp4");
   video.loop();
-  video.size(420, 270);
-//  video.hide();
+  video.size(490, 400);
+  video.hide();
+
 
   createCanvas(video.width, video.height);
   noStroke();
@@ -18,7 +17,6 @@ function setup() {
 function draw() {
   background(250);
   video.loadPixels();
-
 
   // loop tho pixels
   for (let row = 5; row < video.height; row += 10) {
@@ -32,10 +30,6 @@ function draw() {
       let h = hue(color(r, g, b));
       let s = saturation(color(r, g, b));
       let l = brightness(color(r, g, b));
-
-
-
-//      colorMode(HSB, 255);
 
       fill(r,g,b);
       ellipse(col, row, s/255*100, s/255*100);
