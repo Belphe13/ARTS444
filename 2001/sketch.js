@@ -1,28 +1,18 @@
 let video;
-let modeX = 100;
-let modeX_speed = 0.5;
 
 function setup() {
   /* 2001 - Stargate */
   video = createVideo("2001.mp4");
   video.loop();
-  video.size(420, 300);
-//  video.hide();
+  video.size(640, 360);
+  video.hide();
 
   createCanvas(video.width, video.height);
-  noStroke();
 }
 
 function draw() {
   background(50);
   video.loadPixels();
-
-  modeX = modeX + modeX_speed;
-  if (modeX > 300) {
-    modeX_speed = -modeX_speed;
-  } else if (modeX < 100) {
-    modeX_speed = -modeX_speed;
-  }
 
   // loop tho pixels
   for (let row = 0; row < video.height; row += 15) {
@@ -34,7 +24,6 @@ function draw() {
       let g = video.pixels[i + 1];
       let b = video.pixels[i + 2];
 
-      colorMode(HSB, modeX);
       fill(r, g, b);
       rect(col, row, 15, 15);
     }
